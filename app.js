@@ -30,7 +30,7 @@ var options = {
     height: 350
   },
   title: {
-    text: "CandleStick Chart",
+    text: "BTC M15 Candle",
     align: "left"
   },
   xaxis: {
