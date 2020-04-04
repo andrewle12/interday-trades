@@ -1,25 +1,13 @@
-// let output = "";
-// let epochTime = "";
-// let opened = "";
-// let high = "";
-// let low = "";
-// let closed = "";
-
-// Output Format
-// {
-//   x: new Date(1443184200000),
-//   y: [239.99, 239.99, 237.37, 237.49]
-// },
-
-$(document).ready(function() {
+var points = [];
+$(document).ready(function () {
   // AJAX in the data file
   $.ajax({
     type: "GET",
-    url: "BTC_M15_Candle_1000.csv",
+    url: "BTC_M15_Candle_2020.csv",
     dataType: "text",
-    success: function(data) {
+    success: function (data) {
       processData(data);
-    }
+    },
   });
 
   // Let's process the data from the data file
@@ -47,22 +35,8 @@ $(document).ready(function() {
     }
 
     // For display
-    for (var i = 0; i < lines.length; i++) {
+    for (var i = 0; i < lines.length - 1; i++) {
       var output = [];
-      // console.log(
-      //   "{x: new Date(" +
-      //     epochTime[i] +
-      //     "), " +
-      //     "y: [" +
-      //     opened[i] +
-      //     ", " +
-      //     high[i] +
-      //     ", " +
-      //     low[i] +
-      //     ", " +
-      //     closed[i] +
-      //     "]},"
-      // );
       output =
         "{x: new Date(" +
         epochTime[i] +
@@ -77,7 +51,54 @@ $(document).ready(function() {
         closed[i] +
         "]},";
 
-      $("#chart").append(output);
+      points = output;
+      // $("#chart").append(output);
+      // Use this to write on site
     }
   }
 });
+
+var options = {
+  series: [
+    {
+      //   data: [
+      //     { x: new Date(1443184200000), y: [239.99, 239.99, 237.37, 237.49] },
+      //     { x: new Date(1443185100000), y: [237.49, 237.47, 237.36, 237.45] },
+      //     { x: new Date(1443186000000), y: [237.45, 237.45, 237.45, 237.45] },
+      //   ],
+      data: points,
+    },
+  ],
+  chart: {
+    type: "candlestick",
+    height: 350,
+    animations: {
+      enabled: true,
+      easing: "easeinout",
+      speed: 800,
+      animateGradually: {
+        enabled: true,
+        delay: 150,
+      },
+      dynamicAnimation: {
+        enabled: true,
+        speed: 350,
+      },
+    },
+  },
+  title: {
+    text: "BTC M15 Candle",
+    align: "left",
+  },
+  xaxis: {
+    type: "datetime",
+  },
+  yaxis: {
+    tooltip: {
+      enabled: true,
+    },
+  },
+};
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
