@@ -1,4 +1,3 @@
 node_modules
 .DS_store
 BTC_Intraday_Trades.csv
-BTC_M15_Candle.csv
