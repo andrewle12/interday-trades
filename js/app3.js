@@ -57,7 +57,7 @@ $(document).ready(function () {
     }
   }
 });
-
+console.log(points);
 var options = {
   series: [
     {
