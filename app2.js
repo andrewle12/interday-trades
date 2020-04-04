@@ -47,7 +47,7 @@ $(document).ready(function() {
     }
 
     // For display
-    for (var i = 0; i <= lines.length; i++) {
+    for (var i = 0; i < lines.length; i++) {
       var output = [];
       // console.log(
       //   "{x: new Date(" +
