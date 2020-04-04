@@ -3,7 +3,7 @@ $(document).ready(function () {
   // AJAX in the data file
   $.ajax({
     type: "GET",
-    url: "BTC_M15_Candle_2020.csv",
+    url: "../BTC_M15_Candle_2020.csv",
     dataType: "text",
     success: function (data) {
       processData(data);
