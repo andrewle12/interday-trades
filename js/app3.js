@@ -51,7 +51,7 @@ $(document).ready(function () {
         closed[i] +
         "]},";
 
-      points = output;
+      points[i] = output;
       // $("#chart").append(output);
       // Use this to write on site
     }
