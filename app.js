@@ -5009,6 +5009,10 @@ var options = {
   chart: {
     type: "candlestick",
     height: 350
+    animations: {
+      enabled: false,
+      
+  }
   },
   title: {
     text: "BTC M15 Candle",
@@ -5022,10 +5026,6 @@ var options = {
       enabled: true
     }
   }
-  dynamicAnimation: {
-    enabled: false,
-    
-}
 };
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);
