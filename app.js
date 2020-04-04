@@ -5002,17 +5002,25 @@ var options = {
         { x: new Date(1.44768e12), y: [319.91, 320.34, 319.57, 319.57] },
         { x: new Date(1.44768e12), y: [319.57, 320, 319.19, 319.75] },
         { x: new Date(1.44768e12), y: [319.75, 320.64, 319.66, 320.64] }
-
       ]
     }
   ],
   chart: {
     type: "candlestick",
-    height: 350
+    height: 350,
     animations: {
       enabled: false,
-      
-  }
+      easing: "easeinout",
+      speed: 800,
+      animateGradually: {
+        enabled: false,
+        delay: 150
+      },
+      dynamicAnimation: {
+        enabled: true,
+        speed: 350
+      }
+    }
   },
   title: {
     text: "BTC M15 Candle",
