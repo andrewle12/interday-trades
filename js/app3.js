@@ -8551,10 +8551,10 @@ var options = {
     animations: {
       enabled: true,
       easing: "easeinout",
-      speed: 800,
+      speed: 8000,
       animateGradually: {
         enabled: true,
-        delay: 150,
+        delay: 1,
       },
       dynamicAnimation: {
         enabled: true,
@@ -8563,7 +8563,7 @@ var options = {
     },
   },
   title: {
-    text: "BTC M15 Candle",
+    text: "BTC M15 Candle 2020",
     align: "left",
   },
   xaxis: {
@@ -8578,3 +8578,7 @@ var options = {
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
+
+$("#2020").on("click", function () {
+  $("chart").html("");
+});
