@@ -1,21 +1,8 @@
-// let output = "";
-// let epochTime = "";
-// let opened = "";
-// let high = "";
-// let low = "";
-// let closed = "";
-
-// Output Format
-// {
-//   x: new Date(1443184200000),
-//   y: [239.99, 239.99, 237.37, 237.49]
-// },
-
 $(document).ready(function () {
   // AJAX in the data file
   $.ajax({
     type: "GET",
-    url: "BTC_M15_Candle_2020.csv",
+    url: "../BTC_M15_Candle_2020.csv",
     dataType: "text",
     success: function (data) {
       processData(data);
@@ -49,20 +36,6 @@ $(document).ready(function () {
     // For display
     for (var i = 0; i < lines.length; i++) {
       var output = [];
-      // console.log(
-      //   "{x: new Date(" +
-      //     epochTime[i] +
-      //     "), " +
-      //     "y: [" +
-      //     opened[i] +
-      //     ", " +
-      //     high[i] +
-      //     ", " +
-      //     low[i] +
-      //     ", " +
-      //     closed[i] +
-      //     "]},"
-      // );
       output =
         "{x: new Date(" +
         epochTime[i] +
