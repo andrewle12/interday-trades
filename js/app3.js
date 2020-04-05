@@ -8553,7 +8553,7 @@ var options = {
       easing: "easeinout",
       speed: 8000,
       animateGradually: {
-        enabled: true,
+        enabled: false,
         delay: 1,
       },
       dynamicAnimation: {
